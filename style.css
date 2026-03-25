@@ -1,0 +1,28 @@
+.To-do-box{
+    border: 2px solid black;
+    height: 500px;
+    width: 800px;
+    overflow: auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    padding: 10px;
+    border-radius: 10px;
+}
+.utility{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+}
