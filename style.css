@@ -18,6 +18,12 @@ h1{
 button{
     padding: 10px;
     border-radius: 10px;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(190, 243, 243);
 }
 .utility{
     display: flex;
@@ -25,4 +31,16 @@ button{
     align-items: center;
     gap: 50px;
     padding: 20px;
+}
+
+li{
+    border: 2px solid black;
+    padding: 5px;
+    width: 96%;
+    cursor: pointer;
+
+}
+
+li:hover{
+    background-color: rgb(190, 243, 243);
 }
