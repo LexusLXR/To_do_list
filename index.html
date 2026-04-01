@@ -11,16 +11,28 @@
     <div class="parent">
         <div class="To-do-box">
            <ol>
-                <li><input type="checkbox">GYM</li>
-           </ol>
+               <li><input type="checkbox">GYM</li>
+            </ol>
         </div>
     </div>
     <div class="utility">
-        <button>Add Task</button>
+        <button id="addBtn">Add Task</button>
         <button>View Task</button>
         <button>Delete Task</button>
         <button>Exit</button>
     </div>
+
+    <!-- floating window -->
+     <div id="float" class="float">
+        <div class="float-content">
+            <h2>Add Task</h2>
+            <div class="inside-1">
+                <input type="text" id="taskinput" placeholder="Enter task......">
+            </div>
+            <button id="saveTask">Save</button>
+            <button id="closefloat">Cancel</button>
+        </div>
+     </div>
 </body>
 <script src="script.js"></script>
 </html>
