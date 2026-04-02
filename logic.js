@@ -3,9 +3,10 @@ class ToDoList{
         this.task = [];
     }
 
-    addtask(){
-        const value = prompt("\nWrite the task you want to append in your work list:");
+    addtask(value){
+       if(value && value.trim() !==""){
         this.task.push(value);
+       }
     }
 
     viewtask(){
@@ -19,43 +20,21 @@ class ToDoList{
     }
 
     deletetask(){
-        try{
-            let listIndex = parseInt(prompt("Write the number of Index which you want to remove it from the list: "));
+        let listItems = document.querySelectorAll("#task-list li")
 
-            listIndex = listIndex - 1;
+        for(let i = listItems.length - 1; i>= 0; i--){
+            let li = listItems[i];
+            let checkbox = li.querySelector("input")
 
-
-            if (listIndex >= 0 && listIndex < this.task.length){
-                let poppedTask = this.task.splice(listIndex, 1)[0];
-
-                console.log(`\nremoved task from my to do list: ${poppedTask}`);
-                console.log(`\nUpdate to do list: `, this.task);
-            }else{
-                console.log("\nInvalid index");
+            if (checkbox.checked){
+                li.remove();
+                this.task.splice(i, 1)
             }
-        }catch (error){
-            console.log("\nplease enter a valid number")
         }
 
     }
+
 }
 
 const tdl = new ToDoList();
 
-while (true){
-    let menu = "1. Add task\n2. View Task\n3. Delete Task\n4. Exit" 
-    let choice = prompt(menu);
-
-    if(choice === "1"){
-        tdl.addtask();
-    } else if (choice === "2"){
-        tdl.viewTask();
-    } else if (choice === "3"){
-        tdl.deletetask();
-    }else if (choice === "4"){
-        console.log("exiting...");
-        break;
-    }else{
-        console.log("\nInvalid input ")
-    }
-}
