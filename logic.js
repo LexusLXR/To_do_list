@@ -5,18 +5,28 @@ class ToDoList{
 
     addtask(value){
        if(value && value.trim() !==""){
-        this.task.push(value);
-       }
+            let taskObj = {
+                id: Math.floor(Math.random() * 10000),
+                text: value
+            };
+            this.task.push(taskObj);
+        }   
     }
 
     viewtask(){
-        if(this.task.length === 0){
-            console.log("\nNo task is available");
-        } else {
-            this.task.forEach((task, index)=>{
-                console.log(index + 1, task)
-            });
-        }
+        const taskList = document.getElementById("task-list")
+
+        taskList.innerHTML = ""; // clear old list
+
+        this.task.forEach((task) =>{
+            let li = document.createElement("li");
+
+            li.innerHTML = `<input type="checkbox"> ${task.text}`;
+
+            li.title = `ID: ${task.id}`;
+
+            taskList.appendChild(li);
+        });
     }
 
     deletetask(){

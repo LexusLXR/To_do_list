@@ -30,11 +30,7 @@ saveTask.addEventListener("click", function(){
 
     tdl.addtask(value);
 
-    if(value && value.trim() !== ""){
-        let li = document.createElement("li");
-        li.innerHTML = `<input type= "checkbox"> ${value}`;
-        taskList.appendChild(li);
+    tdl.viewtask();
 
-        taskInput.value = "";
-    }
+    taskInput.value = "";
 })
