@@ -1,93 +1,196 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Body */
 body{
-    background-color:   rgb(255, 255, 255);
+    background: #121212;
+    color: #fff;
 }
 
-.To-do-box{
-    box-shadow:inset 0px 4px 10px rgba(0, 0, 0, 0.5);
-    background-color: white;
-    border: 2px solid #ffffff;
-    height: 500px;
-    width: 800px;
-    overflow: auto;
-    border-radius: 10px;
-}
-.To-do-box::-webkit-scrollbar{
-    display: none;
-}
-
+/* Title */
 h1{
     text-align: center;
-    color: rgb(0, 0, 0);
+    margin: 20px 0;
 }
 
+/* Center container */
 .parent{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-button{
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    height: 50px;
-    width: 100px;
-    cursor: pointer;
-    /* box-shadow:inset 0px 4px 10px rgba(0, 0, 0, 0.5); */
-}
-button:hover{
-    background-color: rgb(190, 243, 243);
-}
-.utility{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    padding: 20px;
+/* Main box */
+.To-do-box{
+    width: 700px;
+    height: 400px;
+    overflow: auto;
+
+    background: #1e1e1e;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
+/* Remove scrollbar (optional) */
+.To-do-box::-webkit-scrollbar{
+    display: none;
+}
+.To-do-box{
+    scrollbar-width: none;
+}
+
+/* Task list */
 li{
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 5px;
-    width: 96%;
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #2a2a2a;
+    padding: 10px;
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+
+    position: relative;
     cursor: pointer;
-    
+
+    transition: 0.2s;
 }
 
 li:hover{
-    background-color: rgb(190, 243, 243);
+    background: #333;
 }
 
+/* Checkbox */
+li input{
+    cursor: pointer;
+}
+
+/* Task text */
+.task-text{
+    font-size: 14px;
+}
+
+/* Buttons */
+.utility{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+
+    background: #00bcd4;
+    color: #000;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+button:hover{
+    background: #00e5ff;
+}
+
+/* Floating modal */
 .float{
     display: none;
+
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+
+    background: rgba(0,0,0,0.6);
+
     justify-content: center;
     align-items: center;
-    box-shadow:inset 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Modal box */
 .float-content{
-    background: white;
+    background: #1e1e1e;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+
     width: 300px;
     text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
+/* Inputs */
 .inside-1{
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin: 15px 0;
 }
 
-#taskinput, #descinput{
+input{
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+/* Hover card (your tooltip upgrade) */
+.task-card{
+    position: absolute;
+    top: 110%;
+    left: 0;
+
+    width: 220px;
+
+    background: #111;
+    color: #fff;
+
     padding: 10px;
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    opacity: 0;
+    transform: translateY(10px);
+
+    transition: 0.2s;
+
+    pointer-events: none;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+
+    z-index: 10;
+}
+
+/* Show on hover */
+li:hover .task-card{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card text */
+.card-row{
+    margin-bottom: 5px;
+}
+
+.card-desc{
+    color: #ccc;
+    line-height: 1.4;
 }

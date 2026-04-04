@@ -25,6 +25,7 @@ function capitalizeFirstLetter(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+
 //Saving task btn connection
 const saveTask = document.getElementById("saveTask");
 const taskInput = document.getElementById("taskinput");
