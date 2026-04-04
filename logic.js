@@ -3,11 +3,12 @@ class ToDoList{
         this.task = [];
     }
 
-    addtask(value){
+    addtask(value, description){
        if(value && value.trim() !==""){
             let taskObj = {
                 id: Math.floor(Math.random() * 10000),
-                text: value
+                text: value,
+                description: description
             };
             this.task.push(taskObj);
         }   
@@ -23,7 +24,7 @@ class ToDoList{
 
             li.innerHTML = `<input type="checkbox"> ${task.text}`;
 
-            li.title = `ID: ${task.id}`;
+            li.title = `ID: ${task.id}\n${task.description}`;
 
             taskList.appendChild(li);
         });
