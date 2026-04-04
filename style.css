@@ -187,10 +187,23 @@ li:hover .task-card{
 
 /* Card text */
 .card-row{
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+
+.card-row strong{
+    color: #00e5ff
 }
 
 .card-desc{
     color: #ccc;
     line-height: 1.4;
 }
+
+.card-row:last-of-type{
+    margin-bottom: 8px;
+}
+
+/* .overdue{
+    color:red;
+} */

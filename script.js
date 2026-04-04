@@ -19,6 +19,8 @@ deleteBtn.addEventListener("click", function(){
     tdl.deletetask();
 })
 
+const dueDateInput = document.getElementById("duedate")
+
 //making first letter capital
 function capitalizeFirstLetter(str){
     if(!str) return ""
@@ -35,15 +37,17 @@ const taskList = document.getElementById("task-list")
 saveTask.addEventListener("click", function(){
     let value = taskInput.value;
     let desc = descInput.value;
+    let dueDate = dueDateInput.value
 
     value = capitalizeFirstLetter(value);
     desc = capitalizeFirstLetter(desc);
 
-    tdl.addtask(value, desc);
+    tdl.addtask(value, desc, dueDate);
     tdl.viewtask();
 
     taskInput.value = "";
     descInput.value = "";
+    dueDateInput.value = "";
 
     float.style.display = "none";
 })

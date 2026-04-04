@@ -1,14 +1,17 @@
+
 class ToDoList {
     constructor() {
         this.task = [];
     }
 
-    addtask(value, description) {
+    addtask(value, description, dueDate) {
         if (value && value.trim() !== "") {
             let taskObj = {
                 id: Math.floor(Math.random() * 10000),
                 text: value,
-                description: description
+                description: description,
+                createdAt: new Date().toLocaleDateString(),
+                dueDate: dueDate
             };
             this.task.push(taskObj);
         }
@@ -28,6 +31,9 @@ class ToDoList {
 
                 <div class="task-card">
                     <div class="card-row"><strong>ID:</strong> ${task.id}</div>
+                    <div class="card-row"><strong>Created:</strong>${task.createdAt}</div>
+                    <div class="card-row"><strong>Due:</strong>${task.dueDate || "Not set"}</div>
+
                     <div class="card-row"><strong>Description:</strong></div>
                     <div class="card-desc">${task.description}</div>
                 </div>
